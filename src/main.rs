@@ -9,6 +9,7 @@ use dioxus::prelude::*;
 use dioxus_logger::tracing::{info, Level};
 
 
+// const _STYLE: &str = manganis::mg!(file("./assets/tailwind.css"));
 
 fn main() {
     // Init logger
@@ -18,10 +19,11 @@ fn main() {
     {
         launch(App);
     }
+
     #[cfg(not(target_arch = "wasm32"))] 
     {
         let cfg = dioxus::desktop::Config::new()
-        .with_custom_head(r#"<link rel="stylesheet" href="tailwind.css">"#.to_string());
+        .with_custom_head(r#"<link rel="stylesheet" href="./assets/tailwind.css">"#.to_string());
         LaunchBuilder::desktop().with_cfg(cfg).launch(App);
     }
     

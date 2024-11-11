@@ -7,14 +7,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# manganis = { workspace = true }
 
-# Debug
 dioxus-logger = "0.5.1"
 manganis = "0.2.2"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-dioxus = {version = "0.5", features = ["desktop", "router"] }
+dioxus = {version = "0.5.6", features = ["desktop", "router"] }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-dioxus = { version = "0.5", features = ["web", "router"] }
+dioxus = { version = "0.5.6", features = ["web", "router"] }
